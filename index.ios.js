@@ -9,15 +9,27 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Alert
 } from 'react-native';
+var request = require('superagent');
 
 export default class teacherChen extends Component {
+  temp = null;
+
+  componentWillMount(){
+      var _that = this;
+      request.get('http://127.0.0.1:3000/v1/movies.json')
+      .end(function(err, res){
+         _that.temp = res.text;
+         console.log(res);
+      });
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+            Welcome
         </Text>
         <Text style={styles.instructions}>
           To get started, edit index.ios.js
