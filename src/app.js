@@ -3,6 +3,7 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+  Image,
   View,
   Alert,
   ScrollView,
@@ -12,8 +13,11 @@ import Intro from './pages/app-intro'
 import { SearchBar, Button } from 'react-native-elements'
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Swiper from 'react-native-swiper';
 
-var height = Dimensions.get('window').height
+var height = Dimensions.get('window').height;
+var width = Dimensions.get('window').width;
+
 
 export default class teacherChen extends Component {
 
@@ -41,7 +45,7 @@ export default class teacherChen extends Component {
 
   _renderQuestion() {
     return (
-      <View style={{top: 30}}>
+      <View style={{height: 150}}>
         <Button
           large
           iconRight
@@ -79,13 +83,30 @@ export default class teacherChen extends Component {
      </View>
     )
   }
+
+  _renderSwiper() {
+    return (
+      <Swiper style={styles.wrapper} paginationStyle={{bottom: 5}}>
+        <View style={styles.slide1}>
+          <Image source={require('./assets/1.jpg')} style={styles.image}/>
+        </View>
+        <View style={styles.slide2}>
+          <Image source={require('./assets/2.jpeg')} style={styles.image}/>
+        </View>
+        <View style={styles.slide3}>
+          <Image source={require('./assets/3.jpeg')} style={styles.image}/>
+        </View>
+      </Swiper>
+    )
+  }
   render() {
     return (
       <View>
         {/*this._renderAppIntro()}*/}
         {this._renderSearchBar()}
-        <ScrollView style={{height: height - 200}}>
+        <ScrollView style={{top: 30, height: height - 200}}>
           {this._renderQuestion()}
+          {this._renderSwiper()}
         </ScrollView>
           {this._renderFloatingButton()}
       </View>
@@ -101,7 +122,37 @@ const styles = StyleSheet.create({
     fontSize: 20,
     height: 22,
     color: 'white',
-  }
+  },
+  wrapper: {
+    height: 90
+ },
+ slide1: {
+   flex: 1,
+   justifyContent: 'center',
+   alignItems: 'center',
+   backgroundColor: '#9DD6EB',
+ },
+ slide2: {
+   flex: 1,
+   justifyContent: 'center',
+   alignItems: 'center',
+   backgroundColor: '#97CAE5',
+ },
+ slide3: {
+   flex: 1,
+   justifyContent: 'center',
+   alignItems: 'center',
+   backgroundColor: '#92BBD9',
+ },
+ text: {
+   color: '#fff',
+   fontSize: 30,
+   fontWeight: 'bold',
+ },
+ image: {
+   height: 90,
+   width:width,
+ }
 });
 
 AppRegistry.registerComponent('teacherChen', () => teacherChen);
