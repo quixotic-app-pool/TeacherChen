@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 
 
-export default class Page3 extends Component {
+export default class ServiceScreen extends Component {
   render() {
     return (
       <View>
-        <Text>page 3</Text>
+        <Text>Chat Screen</Text>
       </View>
     )
   }

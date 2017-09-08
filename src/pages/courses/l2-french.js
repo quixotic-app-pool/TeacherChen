@@ -5,11 +5,11 @@ import {
 } from 'react-native';
 
 
-export default class Page2 extends Component {
+export default class FrenchScreen extends Component {
   render() {
     return (
       <View>
-        <Text>page 2</Text>
+        <Text>Chat Screen</Text>
       </View>
     )
   }

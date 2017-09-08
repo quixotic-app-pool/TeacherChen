@@ -18,8 +18,8 @@ import { TabNavigator, StackNavigator } from 'react-navigation';
 import Intro from './pages/app-intro';
 import ExampleList from './components/foldview/ExampleList';
 import MainPage from './pages/main-page';
-import Page2 from './pages/page2';
-import Page3 from './pages/page3';
+import CoursesScreen from './pages/courses-screen';
+import ChatScreen from './pages/chat-screen';
 import Me from './pages/me';
 
 
@@ -39,8 +39,8 @@ export default class DefaultScreen extends Component {
 
 const MainScreenNavigator = TabNavigator({
   首页: { screen: DefaultScreen },
-  Page2: { screen: Page2 },
-  Page2: { screen: Page2 },
+  课程: { screen: CoursesScreen },
+  单聊: { screen: ChatScreen },
   我的: { screen: Me }
 }, {
   animationEnabled: true,
@@ -61,12 +61,5 @@ const teacherChen = StackNavigator({
 MainScreenNavigator.navigationOptions = {
   title: '陈老师',
 };
-
-
-const styles = StyleSheet.create({
-  searchBarContainer: {
-    top: 20
-  }
-});
 
 AppRegistry.registerComponent('teacherChen', () => teacherChen);

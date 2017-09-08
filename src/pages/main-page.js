@@ -26,7 +26,7 @@ export default class MainPage extends Component {
     tabBarLabel: '首页',
     tabBarIcon: ({ tintColor }) => (
      <Image source={require('../assets/1.jpg')}/>
-     
+
     ),
   };
 
