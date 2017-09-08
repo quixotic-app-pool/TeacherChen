@@ -3,14 +3,12 @@ import {
   View,
   Text
 } from 'react-native';
-
+import ExampleList from '../../components/foldview/ExampleList';
 
 export default class SoftwareScreen extends Component {
   render() {
     return (
-      <View>
-        <Text>Chat Screen</Text>
-      </View>
+      <ExampleList style={{top: 120}}/>
     )
   }
 }

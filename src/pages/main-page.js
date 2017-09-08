@@ -116,7 +116,6 @@ export default class MainPage extends Component {
         <ScrollView style={{top: 30, height: height}}>
           {this._renderQuestion()}
           {this._renderSwiper()}
-          <ExampleList style={{top: 120}}/>
         </ScrollView>
         <View style={{bottom: 280}}>
           {this._renderFloatingButton()}
